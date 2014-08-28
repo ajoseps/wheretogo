@@ -3,15 +3,14 @@ var url = "https://www.google.com/maps/embed/v1/search?key=AIzaSyBYZHhfGSwRMN1vF
 var session = '';
 
 $(document).ready(function() {
-  session = myDataRef.push({conversation:{}, query:"&q=Palo+Alto"});
-  session.child("conversation").push({name:"WTG",text:"Welcome!"});
-  session = session.name();
-  myDataRef = myDataRef.child(session);
+  session = myDataRef.push({query:"&q=Palo+Alto"});
+  myDataRef = session;
 
   // Initalizes Map
   myDataRef.child("query").on('value', function(snapshot){
     updateMap(snapshot);
   });
+
 });
 
 // Listener for map updates
@@ -19,11 +18,18 @@ myDataRef.child("query").on('child_changed', function(snapshot){
   updateMap(snapshot);
 });
 
+// Listener for new messages
+myDataRef.child("conversation").on('child_added', function(snapshot){
+  console.log("ADDED CHILD!");
+  var message = snapshot.val();
+  displayChatMessage(message.name, message.text);
+});
+
 // Stores search input into session's query slot (location) once entered
 $("#searchInput").keypress(function (e){
   if(e.keyCode == 13) {
     var params = "&q=" + $('#searchInput').val().replace(/ /g, "+");
-    myDataRef.set({query:params});
+    myDataRef.update({query:params});
     var srcurl = url + params;
     var mapHtml = '<iframe id="map" width="100%" height="100%" frameborder="0" style="border:0" src=' + srcurl + '> </iframe>'
     $('#map').replaceWith(mapHtml);
@@ -38,13 +44,6 @@ $('#messageInput').keypress(function (e) {
     myDataRef.child("conversation").push({name: name, text: text});
     $('#messageInput').val('');
   }
-});
-
-// Listener for new messages
-myDataRef.child("conversation").on('child_added', function(snapshot) {
-  var message = snapshot.val();
-  console.log("NEW: " + message[0]);
-  displayChatMessage(message.name, message.text);
 });
 
 // Displays messages
