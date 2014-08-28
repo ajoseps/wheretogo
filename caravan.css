@@ -1,0 +1,4 @@
+html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row-fluid .span10
+{
+	height: 100%;
+}

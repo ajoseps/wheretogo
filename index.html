@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="caravan.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <!-- MAP -->
+      <div class="span10">
+        <iframe id="map" width="100%" height="100%" frameborder="0" style="border:0"> </iframe>
+      </div>
+
+      <!-- MESSAGES -->
+      <div id='messages' class="span2">
+
+        <div>
+          <h1>WTG?</h1>
+          <h3>Figure it out</h3>
+        </div>
+
+        <div id='searchDiv'>
+                <input type='text' id='searchInput' placeholder='Search'>
+        </div>
+
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <span class="glyphicon glyphicon-comment"> Chat </span> 
+          </div>
+
+          <div class="panel-body">
+            <ul id='messagesOutputDiv'> </ul>
+            <div id='messagesInputDiv' class="panel-footer">
+              <div class="input-group">
+                  <input id='nameInput' type='text'  placeholder='Name'>
+                  <input id="messageInput" type="text" placeholder="Chat here">
+              </div>
+            </div>
+
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="wtg.js"> </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
