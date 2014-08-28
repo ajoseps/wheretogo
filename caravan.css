@@ -1,4 +1,26 @@
-html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row-fluid .span10
+html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row-fluid .span8, .container-fluid .row-fluid .span4
 {
 	height: 100%;
+}
+
+#messages{
+	height: 100%;
+	position: relative;
+}
+
+#chatPanel{
+	height: 100%;
+	position: relative;
+}
+
+#messagesInputDiv{
+	position: relative;
+	float: bottom;
+}
+
+
+#createRoomButton{
+	position: fixed;
+	left: 50%;
+	top: 50%;
 }
