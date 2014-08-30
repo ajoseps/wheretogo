@@ -1,4 +1,4 @@
-html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row-fluid .span8, .container-fluid .row-fluid .span4
+html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row-fluid .span9, .container-fluid .row-fluid .span3
 {
 	height: 100%;
 }
@@ -18,8 +18,7 @@ html, body, .container-fluid, .container-fluid .row-fluid, .container-fluid .row
 	float: bottom;
 }
 
-
-#createRoomButton{
+#roomInit{
 	position: fixed;
 	left: 50%;
 	top: 50%;

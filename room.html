@@ -3,23 +3,23 @@
 <head>
   <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.css" rel="stylesheet" media="all">
   <link href="caravan.css" rel="stylesheet">
 </head>
 <body>
   <div class="container-fluid">
     <div class="row-fluid">
-      <!-- MAP -->
-      <div class="span8">
+
+      <div class="span9">
         <iframe id="map" width="100%" height="100%" frameborder="0" style="border:0"> </iframe>
       </div>
 
-      <!-- MESSAGES -->
-      <div id='messages' class="span4" height="100%">
+      <div id='messages' class="span3" height="100%">
 
         <div>
           <h1>WTG?</h1>
           <h3>Figure it out</h3>
+          <button id='shareButton' type="button" class="btn btn-lg btn-success">Share Link</button>
         </div>
 
         <div id='searchDiv'>
@@ -40,7 +40,6 @@
                 <input id="messageInput" type="text" placeholder="Chat here">
               </div>
             </div>
-
           </div>  
         </div>
 
@@ -49,9 +48,8 @@
   </div>
 
   <script src="wtg.js"> </script>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
